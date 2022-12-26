@@ -1,0 +1,236 @@
+#!/usr/bin/env python3
+#
+# Jakob Janzen
+# 2022-12-19
+# jakob.janzen80@gmail.com
+#
+
+class PythonRC(object):
+    """ intended as class to enclose everything """
+    def __init__(s):
+        """ initialize and setup """
+        import os as __os
+        import os.path as __ospath
+        import sys as __sys
+        import atexit as __atexit
+
+        # class imports
+        s.__os = __os
+        s.__ospath = __ospath
+        s.__sys = __sys
+        s.__atexit = __atexit
+
+        # setup specific data
+        s.__platform = s.__sys.platform
+        s.__homedir = s.__os.getenv("HOME")
+        s.__pythonrc = s.__ospath.basename(s.__ospath.abspath(__file__))
+        s.__historyfile = s.__ospath.join(s.__homedir, ".python_history")
+        s.__terminals = (
+            "xterm",
+            "xterm-color",
+            "xterm-256color",
+            "linux",
+            "screen",
+            "screen-256color",
+            "screen-bce"
+            )
+
+        if s.isinteractive():
+            """ run the whole setup """
+            s.setup()
+
+    class AC:
+        """ ASCII control codes """
+        # group 1
+        NUL = "\000"    # null
+        SOH = "\001"    # start of heading
+        STX = "\002"    # start of text
+        ETX = "\003"    # end of text
+        EOT = "\004"    # end of transmission
+        ENQ = "\005"    # enquiry
+        ACK = "\006"    # acknowledge
+        BEL = "\007"    # bell
+        # group 2
+        BS = "\010"     # backspace
+        HT = "\011"     # horizontal tab
+        LF = "\012"     # NL line feed, new line
+        VT = "\013"     # vertical tab
+        FF = "\014"     # NP form feed, new page
+        CR = "\015"     # carriage return
+        SO = "\016"     # shift out
+        SI = "\017"     # shift in
+        # group 3
+        DLE = "\020"    # data link escape
+        DC1 = "\021"    # device control 1
+        DC2 = "\022"    # device control 2
+        DC3 = "\023"    # device control 3
+        DC4 = "\024"    # device control 4
+        NAK = "\025"    # negative acknowledge
+        SYN = "\026"    # synchronous idle
+        ETB = "\027"    # end of trans, block
+        # group 4
+        CAN = "\030"    # cancel
+        EM = "\031"     # end of medium
+        SUB = "\032"    # substitute
+        ESC = "\033"    # escape
+        FS = "\034"     # file separator
+        GS = "\035"     # group separator
+        RS = "\036"     # record separator
+        US = "\037"     # unit separator
+        #
+        SP = "\040"     # space
+        DEL = "\177"    # delete
+
+    class COL:
+        """ color codes """
+        class FG:
+            """ foreground """
+            BLK = "30"
+            RED = "31"
+            GRN = "32"
+            BRN = "33"
+            BLU = "34"
+            MGT = "35"
+            CYN = "36"
+            WHT = "37"
+            DFT = "39"
+
+        class BG:
+            """ background """
+            BLK = "40"
+            RED = "41"
+            GRN = "42"
+            BRN = "43"
+            BLU = "44"
+            MGT = "45"
+            CYN = "46"
+            WHT = "47"
+            DFT = "49"
+
+        class GR:
+            """ graphics """
+            RST = "0"
+            BLD = "1"
+            DIM = "2"
+            ITC = "3"
+            UDL = "4"
+            BLN = "5"
+            REV = "7"
+            HID = "8"
+            STT = "9"
+
+    def __print(s, message):
+        """ normal message printing """
+        print("{0} :: {1}".format(s.__pythonrc, message))
+        return True
+
+    def __printerr(s, message):
+        """ error message printing """
+        print("{0} :: {1} !".format(s.__pythonrc, message),
+              file=s.__sys.stderr)
+        return False
+
+    def __setup(s, functionality):
+        """ only setup the specific functionality """
+        return functionality()
+
+    def isinteractive(s):
+        """ check if the current environment is an interactive shell """
+        if s.__sys.stdout.isatty():
+            s.__print("INTERACTIVE PYTHON SHELL")
+            return True
+        return False
+
+    def iscolorterminal(s):
+        """ check if the current terminal is capable for colors """
+        s.__print("current terminal: {0}".format(s.__os.getenv("TERM")))
+        if s.__os.getenv("TERM") in s.__terminals:
+            return True
+        return False
+
+    def colorprompt(s):
+        """ colorized prompt """
+        if s.iscolorterminal():
+            try:
+                import readline
+            except ImportError:
+                s.__sys.ps1 = "{0}[{1};{2}m>>> {0}[{1}m".format(
+                    s.AC.ESC, s.COL.GR.RST, s.COL.FG.GRN)
+                s.__sys.ps2 = "{0}[{1};{2}m... {0}[{1}m".format(
+                    s.AC.ESC, s.COL.GR.RST, s.COL.FG.GRN)
+            else:
+                s.__sys.ps1 = "{1}{0}[{3};{4}m{2}>>> {1}{0}[{3}m{2}".format(
+                    s.AC.ESC, s.AC.SOH, s.AC.STX, s.COL.GR.RST, s.COL.FG.GRN)
+                s.__sys.ps2 = "{1}{0}[{3};{4}m{2}... {1}{0}[{3}m{2}".format(
+                    s.AC.ESC, s.AC.SOH, s.AC.STX, s.COL.GR.RST, s.COL.FG.GRN)
+                return True
+        return False
+
+    def tabcompletion(s):
+        """ enable tabular completion """
+        try:
+            import readline
+        except ImportError:
+            s.__printerr("module readline not available")
+        else:
+            try:
+                import rlcompleter
+            except ImportError:
+                s.__printerr("module rlcompleter not available")
+            else:
+                if s.__platform == "linux":
+                    readline.parse_and_bind("tab: complete")
+                    s.__print(
+                        "auto completion for {0} loaded".format(s.__platform))
+                    return True
+        return False
+
+    def historyfile(s):
+        """ handle a persistent history file """
+        try:
+            import readline
+        except ImportError:
+            s.__printerr("module readline not available")
+        else:
+            if s.__ospath.exists(s.__historyfile):
+                try:
+                    s.__print("reading history file {0} ...".format(
+                        s.__historyfile))
+                    readline.read_history_file(s.__historyfile)
+                except Exception as err:
+                    s.__printerr("removing history file {0} due to error: {1}".format(
+                        s.__historyfile, str(err)))
+                    s.__os.remove(s.__historyfile)
+            readline.set_history_length(1000)
+
+        def savehistory():
+            """ handler to register at exit """
+            try:
+                s.__print("saving history to {0} ...".format(s.__historyfile))
+                readline.write_history_file(s.__historyfile)
+            except NameError:
+                pass
+            except Exception as err:
+                s.__printerr(
+                    "failed saving history with error: {0}".format(str(err)))
+                return False
+            return True
+
+        s.__atexit.register(savehistory)
+        return True
+
+    def setup(s):
+        """ execute whole setup """
+        for functionality in (
+            s.colorprompt,
+            s.tabcompletion,
+            s.historyfile
+            ):
+            s.__setup(functionality)
+        return
+
+
+if __name__ == "__main__":
+    PythonRC()
+    del PythonRC
+
