@@ -119,19 +119,19 @@ def main():
     if app.found:
         app.write_settings()
         app.running = app.get_running()
-        print("application: {0}".format(app.found))
-        print("running: {0}".format(app.running))
+        print("application: {}".format(app.found))
+        print("running: {}".format(app.running))
         if app.running:
-            print("killing {0} ...".format(app.found))
+            print("killing {} ...".format(app.found))
             app.kill()
-        print("starting {0} ...".format(app.found))
+        print("starting {} ...".format(app.found))
         app.run()
         app.wait()
         app.running = app.get_running()
-        print("application: {0}".format(app.found))
-        print("running: {0}".format(app.running))
+        print("application: {}".format(app.found))
+        print("running: {}".format(app.running))
     else:
-        print("application {0} not found, removing configuration ...".format(app.name))
+        print("application {} not found, removing configuration ...".format(app.name))
         if app.remove_settings():
             print("application configuration removed")
     return
