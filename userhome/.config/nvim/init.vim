@@ -103,7 +103,7 @@ map! ß <Char-223>
 "[ COLOR ]
 highlight clear
 set background=dark
-colorscheme lunaperche
+colorscheme default
 let &colorcolumn="80,100,120"
 highlight ColorColumn cterm=Reverse
 
