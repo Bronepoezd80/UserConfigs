@@ -1,9 +1,0 @@
-[Appearance]
-HideSkinBorders=true
-
-[Dialogs]
-FirstRun=false
-
-[Window]
-Height=70
-Width=80
