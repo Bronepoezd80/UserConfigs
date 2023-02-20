@@ -1,0 +1,42 @@
+#
+# Jakob Janzen
+# jakob.janzen80@gmail.com
+# 2023-02-20
+#
+# List of packages to install or to remove.
+# For Ubuntu-based Linux Distributions.
+#
+
+[ INSTALL ]
+# Utilities
+tree mc
+curl wget gpg apt-transport-https
+
+# Games
+aisleriot gnome-cards-data
+
+# Graphics
+gimp gimp-help-de inkscape pinta
+
+# Media
+audacity
+vlc vlc-plugin-base vlc-plugin-access-extra vlc-plugin-fluidsynth vlc-plugin-jack vlc-plugin-video-output vlc-plugin-visualization
+
+# GUI-Interface
+qt5ct qt5-style-kvantum libreoffice-style-sifr guake
+
+# Development
+vim neovim shellcheck shfmt
+build-essential cmake valgrind git zeal meld
+python-is-python3 python3-autopep8 black yapf3 bandit flake8 mypy pycodestyle pydocstyle pylama pylint pipenv python3-poetry python3-pytest
+
+# Compression
+dar lbzip2 pbzip2 pigz lrzip lz4 plzip pdlzip pixz 7zip p7zip-rar rar tarlz unar zpaq lhasa unace
+
+# Extra Codecs
+aften lame libmad0 speex flac faac libfdk-aac2 fdkaac libavif13 dav1d svt-av1 davs2 x265 x264 ffmpeg ogmtools
+
+
+[ REMOVE ]
+thunderbird
+

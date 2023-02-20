@@ -2,7 +2,7 @@
 """
     Jakob Janzen
     jakob.janzen80@gmail.com
-    2022-12-24
+    2023-02-20
 
     Synchronize User Configurations.
 """
@@ -234,7 +234,7 @@ class Backup(object):
         return
 
     def file(self, source_, target_):
-        source_suffix = source_.removeprefix(self.__userhome + "/") 
+        source_suffix = source_.removeprefix(self.__userhome + "/")
         target_prefix = target_.removesuffix(source_suffix)
         target = os.path.join(self.__backup_target_dir, source_suffix)
         self.__log.info("making backup of file {}".format(source_))
