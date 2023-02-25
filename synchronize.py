@@ -85,6 +85,8 @@ if __name__ == "__main__":
         main()
         sys.exit(0)
 
+    except PermissionError as e:
+        print(str(e), file=sys.stderr)
     except core.SyncError as e:
         log.exception(e)
     except core.SyncMakeDirError as e:
