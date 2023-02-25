@@ -19,8 +19,9 @@ class GlobalVars:
     version_minor_required = 8
     name = None
     module_name = os.path.basename(str(__file__)).split(".")[0]
-    timestamp_logfile = core.Timestamp().logfile()
-    timestamp_backup = core.Timestamp().backup()
+    logformat = "%(asctime)s :: %(name)s :: %(levelname)s :: %(message)s"
+    timestamp_logfile = core.Timestamp().logfile("%Y%m%d")
+    timestamp_backup = core.Timestamp().backup("%Y%m%d%H%M%S")
     backup_directory = ".backup_userconfigs"
 
 
@@ -29,10 +30,8 @@ def main():
 
     GlobalVars.name = GlobalVars.module_name
 
-    class Main:
-        log = core.Log(GlobalVars)
-
-    Main.log.section("{} USER CONFIGURATIONS".format(GlobalVars.module_name).upper(), 5)
+    log = core.Log(GlobalVars)
+    log.section("{} USER CONFIGURATIONS".format(GlobalVars.module_name).upper(), 5)
 
     # Command line options:
     usage = "usage: %prog [options]"
@@ -49,7 +48,7 @@ def main():
     (options, args) = parser.parse_args()
     if options.userhome is None:
         parser.print_help()
-        return 0
+        return 1
     options.userhome = os.path.abspath(options.userhome)
 
     if not os.path.isdir(options.userhome):
@@ -57,20 +56,20 @@ def main():
         raise core.SyncError("directory {} invalid!".format(options.userhome))
 
     cwd = os.getcwd()
-    Main.log.info("current working directory: {}".format(cwd))
+    log.info("current working directory: {}".format(cwd))
 
     source = options.userhome
-    Main.log.info("source: {}".format(source))
+    log.info("source: {}".format(source))
     target = str(Path.home())
-    Main.log.info("target: {}".format(target))
+    log.info("target: {}".format(target))
 
     if os.path.isdir(source):
-        Main.log.section("WALKING THE SOURCE", 3)
+        log.section("WALKING THE SOURCE", 3)
         for root, directories, files in os.walk(source):
             sync = core.Sync(GlobalVars, root, directories, files)
             sync.directories(source, target)
             sync.files(source, target)
-            Main.log.info()
+            log.info()
     else:
         error = "path {} not found!"
         raise core.SyncError(error.format(source))

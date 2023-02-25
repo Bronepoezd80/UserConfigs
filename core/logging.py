@@ -1,7 +1,7 @@
 """
     Jakob Janzen
     jakob.janzen80@gmail.com
-    2023-02-22
+    2023-02-25
 
     Synchronize User Configurations - Core - Logging.
 """
@@ -13,7 +13,7 @@ class Log(object):
         """Distinguish loggers through name."""
         self.__logger = _log.getLogger(GlobalVars_.module_name)
         self.__logger.setLevel(_log.INFO)
-        self.__format = "%(asctime)s :: %(name)s :: %(levelname)s :: %(message)s"
+        self.__format = GlobalVars_.logformat
         self.__formatter = _log.Formatter(self.__format)
         # Log-file with only date timestamp, avoid files overkill by omitting time.
         self.__logfile = "{}_{}.log".format(

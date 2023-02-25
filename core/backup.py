@@ -1,7 +1,7 @@
 """
     Jakob Janzen
     jakob.janzen80@gmail.com
-    2023-02-22
+    2023-02-25
 
     Synchronize User Configurations - Core - Backup.
 """
@@ -19,23 +19,38 @@ class Backup(object):
         self.__copy = _cp.Copy(GlobalVars_)
         self.__userhome = userhome_
         self.__backup_dir = GlobalVars_.backup_directory
-        self.__backup_timestamp_dir = "BAK{}".format(GlobalVars_.timestamp_backup)
-        self.__backup_target_dir = _osp.join(
-            self.__userhome, self.__backup_dir, self.__backup_timestamp_dir
-        )
+        self.__backup_timestamp_dir = self.__timestamp_dir(GlobalVars_)
+        self.__backup_target_dir = self.__target_dir()
         return
 
-    def directory(self, target_):
-        target_dir = _osp.join(
+    def __timestamp_dir(self, GlobalVars_):
+        return "BAK{}".format(GlobalVars_.timestamp_backup)
+
+    def __target_dir(self):
+        return _osp.join(
+            self.__userhome, self.__backup_dir, self.__backup_timestamp_dir
+        )
+
+    def __format_target_dir(self, target_):
+        return _osp.join(
             self.__backup_target_dir, target_.removeprefix(self.__userhome + "/")
         )
-        self.__log.info("making backup of directory {}".format(target_dir))
-        self.__dirs.make(target_dir)
+
+    def __format_source_file(self, source_):
+        return source_.removeprefix(self.__userhome + "/")
+
+    def __format_target_file(self, target_):
+        return _osp.join(self.__backup_target_dir, target_)
+
+    def directory(self, target_):
+        target = self.__format_target_dir(target_)
+        self.__log.info("making backup of directory {}".format(target))
+        self.__dirs.make(target)
         return
 
     def file(self, source_):
-        source_suffix = source_.removeprefix(self.__userhome + "/")
-        target = _osp.join(self.__backup_target_dir, source_suffix)
+        source = self.__format_source_file(source_)
+        target = self.__format_target_file(source)
         self.__log.info("making backup of file {}".format(source_))
         self.__copy.file(source_, target)
         return

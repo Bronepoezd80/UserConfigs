@@ -13,8 +13,8 @@ class Timestamp(object):
         self.__now = _dt.now()
         return
 
-    def logfile(self):
-        return self.__now.strftime("%Y%m%d")
+    def logfile(self, format_):
+        return self.__now.strftime(format_)
 
-    def backup(self):
-        return self.__now.strftime("%Y%m%d%H%M%S")
+    def backup(self, format_):
+        return self.__now.strftime(format_)

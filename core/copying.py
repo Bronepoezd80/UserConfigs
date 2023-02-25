@@ -1,7 +1,7 @@
 """
     Jakob Janzen
     jakob.janzen80@gmail.com
-    2023-02-22
+    2023-02-25
 
     Synchronize User Configurations - Core - Copying.
 """
