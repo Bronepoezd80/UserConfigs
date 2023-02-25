@@ -25,12 +25,13 @@ class GlobalVars:
 
 
 def main():
-    # Version().check()
     core.Version(GlobalVars).check()
 
     GlobalVars.name = GlobalVars.module_name
+
     class Main:
         log = core.Log(GlobalVars)
+
     Main.log.section("{} USER CONFIGURATIONS".format(GlobalVars.module_name).upper(), 5)
 
     # Command line options:
@@ -46,11 +47,11 @@ def main():
         metavar="USERHOME",
     )
     (options, args) = parser.parse_args()
-    options.userhome = os.path.abspath(options.userhome)
-
     if options.userhome is None:
         parser.print_help()
-        return
+        return 0
+    options.userhome = os.path.abspath(options.userhome)
+
     if not os.path.isdir(options.userhome):
         parser.print_help()
         raise core.SyncError("directory {} invalid!".format(options.userhome))
@@ -58,10 +59,8 @@ def main():
     cwd = os.getcwd()
     Main.log.info("current working directory: {}".format(cwd))
 
-    # source = os.path.join(cwd, "userhome")
     source = options.userhome
     Main.log.info("source: {}".format(source))
-
     target = str(Path.home())
     Main.log.info("target: {}".format(target))
 
@@ -75,15 +74,14 @@ def main():
     else:
         error = "path {} not found!"
         raise core.SyncError(error.format(source))
-
-    return
+    return 0
 
 
 if __name__ == "__main__":
     try:
         log = core.Log(GlobalVars)
-        main()
-        sys.exit(0)
+        exitcode = main()
+        sys.exit(exitcode)
 
     except PermissionError as e:
         print(str(e), file=sys.stderr)
