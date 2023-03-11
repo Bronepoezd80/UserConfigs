@@ -26,19 +26,16 @@ class Sync(object):
         self.__dirs = _dirs.Dirs(GlobalVars_)
         self.__copy = _cp.Copy(GlobalVars_)
         self.__log = _log.Log(GlobalVars_)
-        return
 
     def __set_source(self, path_, type_):
         self.__source = _osp.join(self.__root, path_)
         self.__log.info("source {}: {}".format(type_, self.__source))
-        return
 
     def __set_target(self, source_, target_, type_):
         self.__target = _osp.join(
             target_, self.__source.removeprefix(source_ + "/")
         )
         self.__log.info("target {}: {}".format(type_, self.__target))
-        return
 
     def __set_paths(self, path_, source_, target_, type_):
         self.__set_source(path_, type_)
@@ -52,7 +49,6 @@ class Sync(object):
             self.__backup.directory(self.__target)
             self.__dirs.make(self.__target)
             self.__log.info()
-        return
 
     def files(self, source_, target_):
         """Handling file synchronization."""
@@ -62,4 +58,3 @@ class Sync(object):
             self.__backup.file(self.__target)
             self.__copy.file(self.__source, self.__target)
             self.__log.info()
-        return

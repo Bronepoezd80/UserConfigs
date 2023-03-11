@@ -17,7 +17,6 @@ class Copy(object):
     def __init__(self, GlobalVars_):
         GlobalVars_.name = "{} :: Copy".format(GlobalVars_.name)
         self.__log = _log.Log(GlobalVars_)
-        return
 
     def __remove(self, file_):
         """Ensuring removal of file or symbolic link."""
@@ -39,7 +38,6 @@ class Copy(object):
             and _fcmp.cmp(source_, target_)
         ):
             self.__log.info("source and target are equal")
-        return
 
     def __filecmp_after(self, source_, target_):
         """Checking after copying."""
@@ -47,7 +45,6 @@ class Copy(object):
             error = "failed to copy {} to {}"
             raise _exc.SyncCopyFileError(error.format(source_, target_))
         self.__log.info("file {} synchronized".format(target_))
-        return
 
     def __symlink(self, source_, target_):
         """Copying symbolic link with checking."""
@@ -70,4 +67,3 @@ class Copy(object):
             self.__filecmp_after(source_, target_)
         except FileNotFoundError as e:
             self.__log.warning(str(e))
-        return

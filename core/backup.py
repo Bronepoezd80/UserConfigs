@@ -21,7 +21,6 @@ class Backup(object):
         self.__backup_dir = GlobalVars_.backup_directory
         self.__backup_timestamp_dir = self.__timestamp_dir(GlobalVars_)
         self.__backup_target_dir = self.__target_dir()
-        return
 
     def __timestamp_dir(self, GlobalVars_):
         return "BAK{}".format(GlobalVars_.timestamp_backup)
@@ -46,11 +45,9 @@ class Backup(object):
         target = self.__format_target_dir(target_)
         self.__log.info("making backup of directory {}".format(target))
         self.__dirs.make(target)
-        return
 
     def file(self, source_):
         source = self.__format_source_file(source_)
         target = self.__format_target_file(source)
         self.__log.info("making backup of file {}".format(source_))
         self.__copy.file(source_, target)
-        return

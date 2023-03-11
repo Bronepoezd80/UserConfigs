@@ -15,7 +15,6 @@ class Dirs(object):
     def __init__(self, GlobalVars_):
         GlobalVars_.name = "{} :: MakeDirs".format(GlobalVars_.name)
         self.__log = _log.Log(GlobalVars_)
-        return
 
     def make(self, target_):
         """Making directories recursively with checking."""
@@ -29,4 +28,3 @@ class Dirs(object):
             else:
                 error = "failed to make target directory {} !"
                 raise _exc.SyncMakeDirError(error.format(target_))
-        return

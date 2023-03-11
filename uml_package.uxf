@@ -1,34 +1,189 @@
-<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLPackage</id><coordinates><x>160</x><y>12</y><w>820</w><h>910</h></coordinates><panel_attributes>UserConfigs
-lw=3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>180</x><y>222</y><w>720</w><h>590</h></coordinates><panel_attributes>core
-lw=2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>180</x><y>832</y><w>100</w><h>70</h></coordinates><panel_attributes>userhome
-lw=2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>420</x><y>692</y><w>100</w><h>100</h></coordinates><panel_attributes>backup
-lw=1.0</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>360</x><y>442</y><w>100</w><h>90</h></coordinates><panel_attributes>copying
-lw=1.0</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>360</x><y>572</y><w>100</w><h>90</h></coordinates><panel_attributes>directories
-lw=1.0</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>680</x><y>552</y><w>110</w><h>90</h></coordinates><panel_attributes>exceptions
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <help_text>Space for diagram notes</help_text>
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>160</x>
+      <y>10</y>
+      <w>840</w>
+      <h>910</h>
+    </coordinates>
+    <panel_attributes>UserConfigs
+lw=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>180</x>
+      <y>220</y>
+      <w>720</w>
+      <h>590</h>
+    </coordinates>
+    <panel_attributes>core
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>180</x>
+      <y>830</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>userhome
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>420</x>
+      <y>690</y>
+      <w>100</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>backup
+lw=1.0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>360</x>
+      <y>440</y>
+      <w>100</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>copying
+lw=1.0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>360</x>
+      <y>570</y>
+      <w>100</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>directories
+lw=1.0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>680</x>
+      <y>550</y>
+      <w>110</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>exceptions
 lw=1.0
 --
 used in
-synchronize</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>680</x><y>442</y><w>110</w><h>90</h></coordinates><panel_attributes>logging
+synchronize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>680</x>
+      <y>440</y>
+      <w>110</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>logging
 lw=1.0
 --
 used in
-synchronize</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>180</x><y>52</y><w>340</w><h>150</h></coordinates><panel_attributes>synchronize
-lw=2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>200</x><y>262</y><w>190</w><h>140</h></coordinates><panel_attributes>synchronize
+synchronize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>180</x>
+      <y>50</y>
+      <w>340</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>synchronize
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>200</x>
+      <y>260</y>
+      <w>190</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>synchronize
 lw=1.5
 --
 used in
 synchronize
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>680</x><y>352</y><w>110</w><h>70</h></coordinates><panel_attributes>timestamp
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>680</x>
+      <y>350</y>
+      <w>110</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>timestamp
 lw=1.0
 --
 used in
-GlobalVars</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>680</x><y>262</y><w>110</w><h>70</h></coordinates><panel_attributes>version
+GlobalVars</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>680</x>
+      <y>260</y>
+      <w>110</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>version
 lw=1.0
 --
 used in
-GlobalVars</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>112</y><w>340</w><h>150</h></coordinates><panel_attributes>lt=.&gt;
+GlobalVars</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>110</y>
+      <w>340</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
 lw=1.5
-&lt;&lt;import&gt;&gt;                               </panel_attributes><additional_attributes>320;130;320;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>82</y><w>720</w><h>820</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;import&gt;&gt;                               </panel_attributes>
+    <additional_attributes>320.0;130.0;320.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>80</y>
+      <w>730</w>
+      <h>820</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
 lw=1.5
 &lt;&lt;access&gt;&gt;
 
@@ -49,10 +204,54 @@ lw=1.5
 
 
 
-</panel_attributes><additional_attributes>250;10;650;10;650;800;10;800</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>492</y><w>70</w><h>160</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;140;50;140;50;10</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>200</x><y>92</y><w>100</w><h>90</h></coordinates><panel_attributes>GlobalVars
-lw=1.5</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>152</y><w>320</w><h>190</h></coordinates><panel_attributes>lt=.&gt;
+</panel_attributes>
+    <additional_attributes>250.0;10.0;650.0;10.0;650.0;800.0;10.0;800.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>490</y>
+      <w>70</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;140.0;50.0;140.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>200</x>
+      <y>90</y>
+      <w>100</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>GlobalVars
+lw=1.5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>150</y>
+      <w>330</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
 lw=1.5
-&lt;&lt;pass&gt;&gt;</panel_attributes><additional_attributes>12;10;260;10;260;170;100;170</additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>482</y><w>390</w><h>440</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;pass&gt;&gt;</panel_attributes>
+    <additional_attributes>12.0;10.0;260.0;10.0;260.0;170.0;100.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>480</y>
+      <w>400</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
 &lt;&lt;import&gt;&gt;
 
 
@@ -72,7 +271,18 @@ lw=1.5
 
 
 
-</panel_attributes><additional_attributes>282;10;320;10;320;280;10;280</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>392</y><w>160</w><h>370</h></coordinates><panel_attributes>lt=&lt;.&gt;
+</panel_attributes>
+    <additional_attributes>282.0;10.0;320.0;10.0;320.0;280.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>390</y>
+      <w>160</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.&gt;
 
 
 
@@ -80,8 +290,41 @@ lw=1.5
 
 
 
-&lt;&lt;import&gt;&gt;</panel_attributes><additional_attributes>12;10;10;350;140;350</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>482</y><w>210</w><h>40</h></coordinates><panel_attributes>lt=.&gt;
-            &lt;&lt;import&gt;&gt;</panel_attributes><additional_attributes>190;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>492</y><w>70</w><h>120</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>50;100;10;100;10;10;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>392</y><w>240</w><h>420</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;import&gt;&gt;</panel_attributes>
+    <additional_attributes>12.0;10.0;10.0;350.0;140.0;350.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>480</y>
+      <w>210</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+            &lt;&lt;import&gt;&gt;</panel_attributes>
+    <additional_attributes>190.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>490</y>
+      <w>70</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>50.0;100.0;10.0;100.0;10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>390</y>
+      <w>240</w>
+      <h>420</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
 &lt;&lt;import&gt;&gt;
 
 
@@ -95,5 +338,41 @@ lw=1.5
 
 
 
-</panel_attributes><additional_attributes>212;380;10;380;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>492</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>622</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>352</y><w>320</w><h>150</h></coordinates><panel_attributes>lt=.&gt;
-&lt;&lt;import&gt;&gt;</panel_attributes><additional_attributes>300;130;260;130;260;20;10;20</additional_attributes></element></diagram>
+</panel_attributes>
+    <additional_attributes>212.0;380.0;10.0;380.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>490</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>620</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>350</y>
+      <w>320</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;import&gt;&gt;</panel_attributes>
+    <additional_attributes>300.0;130.0;260.0;130.0;260.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+</diagram>

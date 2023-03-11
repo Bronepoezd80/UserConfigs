@@ -11,7 +11,6 @@ from datetime import datetime as _dt
 class Timestamp(object):
     def __init__(self):
         self.__now = _dt.now()
-        return
 
     def logfile(self, format_):
         return self.__now.strftime(format_)
