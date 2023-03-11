@@ -1,10 +1,7 @@
 #!/bin/bash
-#
 # Jakob Janzen
-# 2022-12-19
+# 2023-03-11
 # jakob.janzen80@gmail.com
-#
-
 
 # CLEAR AND RESET AFTER LEAVING CONSOLE
 clear

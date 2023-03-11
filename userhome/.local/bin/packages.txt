@@ -27,7 +27,7 @@ qt5ct qt5-style-kvantum libreoffice-style-sifr guake
 
 # Development
 vim neovim shellcheck shfmt
-build-essential cmake clang clang-format clang-tidy valgrind git zeal meld ghex
+build-essential cmake clang clang-format clang-tidy valgrind git zeal meld ghex ccls clangd
 python-is-python3 python3-autopep8 black yapf3 bandit flake8 mypy pycodestyle pydocstyle pylama pylint pipenv python3-poetry python3-pytest
 
 # Compression
